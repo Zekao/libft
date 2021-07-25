@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emaugale <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/25 20:11:53 by emaugale          #+#    #+#             */
-/*   Updated: 2021/07/25 21:26:15 by emaugale         ###   ########.fr       */
+/*   Created: 2021/07/25 21:40:15 by emaugale          #+#    #+#             */
+/*   Updated: 2021/07/25 21:41:59 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(char *str)
+int	ft_isdigit(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			i++;
-		else if (str[i] >= 'a' && str[i] <= 'z')
+		if(str[i] >= '0' && str[i] <= '9')
 			i++;
 		else
 			return (0);
