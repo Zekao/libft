@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isacii.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emaugale <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/25 20:11:53 by emaugale          #+#    #+#             */
-/*   Updated: 2021/07/25 22:31:17 by emaugale         ###   ########.fr       */
+/*   Created: 2021/07/26 00:05:52 by emaugale          #+#    #+#             */
+/*   Updated: 2021/07/26 00:06:17 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+int	ft_isascii(int c)
 {
-	if (ft_isupper(c) || ft_islower(c))
+	if (c >= 0 && c <= 127)
 		return (1);
 	return (0);
 }

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emaugale <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/25 20:11:53 by emaugale          #+#    #+#             */
-/*   Updated: 2021/07/25 22:31:17 by emaugale         ###   ########.fr       */
+/*   Created: 2021/07/25 23:39:23 by emaugale          #+#    #+#             */
+/*   Updated: 2021/07/25 23:39:58 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+int	ft_isalnum(int c)
 {
-	if (ft_isupper(c) || ft_islower(c))
+	if (ft_isalpha(c) || ft_isdigit(c))
 		return (1);
 	return (0);
 }

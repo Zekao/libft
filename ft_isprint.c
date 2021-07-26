@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emaugale <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/25 20:11:53 by emaugale          #+#    #+#             */
-/*   Updated: 2021/07/25 22:31:17 by emaugale         ###   ########.fr       */
+/*   Created: 2021/07/26 00:03:14 by emaugale          #+#    #+#             */
+/*   Updated: 2021/07/26 00:04:28 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+int	ft_isprint(int c)
 {
-	if (ft_isupper(c) || ft_islower(c))
+	if (c >= 32 && c <= 126)
 		return (1);
 	return (0);
 }
