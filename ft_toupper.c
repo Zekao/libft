@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaugale <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/25 21:00:10 by emaugale          #+#    #+#             */
-/*   Updated: 2021/07/26 21:14:05 by emaugale         ###   ########.fr       */
+/*   Created: 2021/07/26 22:49:35 by emaugale          #+#    #+#             */
+/*   Updated: 2021/07/26 22:50:52 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *str)
+int	ft_toupper(int c)
 {
-	int		i;
-	char	*newstr;
-
-	i = 0;
-	while (str[i])
-		i++;
-	newstr = malloc (sizeof(char) * (i + 1));
-	i = 0;
-	while (str[i])
-	{
-		newstr[i] = str[i];
-		i++;
-	}
-	newstr[i] = '\0';
-	return (newstr);
+	if (c >= 'a' && c <= 'z')
+		c = c - 32;
+	return (c);
 }

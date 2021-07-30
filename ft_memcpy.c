@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emaugale <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/25 20:11:40 by emaugale          #+#    #+#             */
-/*   Updated: 2021/07/26 20:52:56 by emaugale         ###   ########.fr       */
+/*   Created: 2021/07/27 18:48:48 by emaugale          #+#    #+#             */
+/*   Updated: 2021/07/27 20:35:25 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	int	i;
-	int	verif;
-	int	r;
+	size_t	i;
+	char	*newsrc;
+	char	*newdest;
 
-	r = 0;
-	verif = 0;
+	newsrc = (char *)src;
+	newdest = (char *)dest;
 	i = 0;
-	if (str[0] == '-' || str[0] == '+')
+	while (i < n)
 	{
-		if (str[0] == '-')
-			verif++;
+		newdest[i] = newsrc[i];
 		i++;
 	}
-	while (str[i] < 32)
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		r = r * 10 + str[i] - 48;
-	}
-	return (r);
+	return (dest);
 }

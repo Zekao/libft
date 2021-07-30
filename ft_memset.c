@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emaugale <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/25 20:11:40 by emaugale          #+#    #+#             */
-/*   Updated: 2021/07/26 20:52:56 by emaugale         ###   ########.fr       */
+/*   Created: 2021/07/27 18:34:52 by emaugale          #+#    #+#             */
+/*   Updated: 2021/07/27 18:48:03 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stddef.h>
+#include <stdio.h>
+#include <string.h>
 
-int	ft_atoi(const char *str)
+void	*ft_memset(void *str, int c, size_t n)
 {
-	int	i;
-	int	verif;
-	int	r;
+	int		i;
+	char	*tempstr;
 
-	r = 0;
-	verif = 0;
+	tempstr = str;
 	i = 0;
-	if (str[0] == '-' || str[0] == '+')
+	while (n)
 	{
-		if (str[0] == '-')
-			verif++;
+		tempstr[i] = c;
 		i++;
+		n--;
 	}
-	while (str[i] < 32)
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		r = r * 10 + str[i] - 48;
-	}
-	return (r);
+	return (str);
 }
