@@ -6,12 +6,44 @@
 /*   By: emaugale <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 20:37:28 by emaugale          #+#    #+#             */
-/*   Updated: 2021/07/27 23:48:37 by emaugale         ###   ########.fr       */
+/*   Updated: 2021/08/01 13:56:39 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdlib.h>
 
-char	*verif_nbr(char *str)
+int	ft_strlen(char *str)
 {
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+char	*ft_strrev(char *str)
+{
+	int			i;
+	int			j;
+	char		tmp;
+
+	j = ft_strlen(str);
+	i = 0;
+	while (i < ((j + 1) / 2))
+	{
+		tmp = str[i];
+		str[i] = str[j - 1];
+		str[j - 1] = tmp;
+		i++;
+		j--;
+	}
+	return (str);
+}
+
+char	*verif_nbr(void)
+{
+	char	*str;
+
 	str = malloc(sizeof(char) * 2);
 	str[0] = '0';
 	str[1] = '\0';
@@ -27,7 +59,7 @@ char	*ft_itoa(int nbr)
 	verif = 0;
 	i = 0;
 	if (nbr == 0)
-		return (verif_nbr(str));
+		return (verif_nbr());
 	if (nbr == -2147483648)
 		return ("-2147483648");
 	if (nbr < 0)

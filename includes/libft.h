@@ -6,7 +6,7 @@
 /*   By: emaugale <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 21:05:10 by emaugale          #+#    #+#             */
-/*   Updated: 2021/07/27 18:47:45 by emaugale         ###   ########.fr       */
+/*   Updated: 2021/08/01 13:52:52 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ char		**ft_split(char *str, char sep);
 int			ft_isdigit(int c);
 int			ft_isalpha(int c);
 int			ft_isalnum(int c);
+char		*ft_itoa(int nbr);
 int			ft_isprint(int c);
 char		*ft_strdup(char *str);
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);

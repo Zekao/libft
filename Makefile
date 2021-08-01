@@ -6,7 +6,7 @@
 #    By: emaugale <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/26 20:40:06 by emaugale          #+#    #+#              #
-#    Updated: 2021/07/26 23:57:31 by emaugale         ###   ########.fr        #
+#    Updated: 2021/08/01 13:55:18 by emaugale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRCS =	ft_atoi.c	\
 	ft_strlen.c	\
 	ft_tolower.c	\
 	ft_toupper.c	\
+	ft_itoa.c 	\
 
 OBJS = ${SRCS:.c=.o}
 
