@@ -6,7 +6,7 @@
 #    By: emaugale <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/26 20:40:06 by emaugale          #+#    #+#              #
-#    Updated: 2021/08/01 13:55:18 by emaugale         ###   ########.fr        #
+#    Updated: 2021/08/02 02:10:41 by emaugale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,9 @@ SRCS =	ft_atoi.c	\
 	ft_toupper.c	\
 	ft_itoa.c 	\
 
-OBJS = ${SRCS:.c=.o}
+D_OBJS =  srcs
+
+OBJS := ${patsubst %.c, ${D_OBJS}/%.o, ${SRCS}}
 
 NAME = libft.a
 

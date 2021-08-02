@@ -1,0 +1,4 @@
+*.o 
+libft.a
+libfttester/
+.DS_Store

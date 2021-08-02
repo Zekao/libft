@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/25 20:11:40 by emaugale          #+#    #+#             */
-/*   Updated: 2021/07/26 20:52:56 by emaugale         ###   ########.fr       */
+/*   Updated: 2021/08/02 13:41:45 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ int	ft_atoi(const char *str)
 	int	r;
 
 	r = 0;
-	verif = 0;
+	verif = 1;
 	i = 0;
 	if (str[0] == '-' || str[0] == '+')
 	{
 		if (str[0] == '-')
-			verif++;
+			verif = -1;
 		i++;
 	}
 	while (str[i] < 32)
@@ -31,5 +31,5 @@ int	ft_atoi(const char *str)
 	{
 		r = r * 10 + str[i] - 48;
 	}
-	return (r);
+	return (r * verif);
 }
