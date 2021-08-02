@@ -6,7 +6,7 @@
 /*   By: emaugale <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 20:37:28 by emaugale          #+#    #+#             */
-/*   Updated: 2021/08/02 02:12:17 by emaugale         ###   ########.fr       */
+/*   Updated: 2021/08/02 20:13:00 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,5 @@ char	*ft_itoa(int nbr)
 	}
 	if (verif == 1)
 		str[i] = '-';
-	return (ft_strrev(str));
+	return(ft_strrev(str));
 }
