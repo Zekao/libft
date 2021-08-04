@@ -6,9 +6,12 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/25 20:11:40 by emaugale          #+#    #+#             */
-/*   Updated: 2021/08/02 18:12:03 by emaugale         ###   ########.fr       */
+/*   Updated: 2021/08/04 13:57:50 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
+
 int	ft_atoi(const char *str)
 {
 	int	i;

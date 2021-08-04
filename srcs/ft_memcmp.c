@@ -1,41 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaugale <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/02 14:04:30 by emaugale          #+#    #+#             */
-/*   Updated: 2021/08/02 20:59:29 by emaugale         ###   ########.fr       */
+/*   Created: 2021/08/04 04:03:47 by emaugale          #+#    #+#             */
+/*   Updated: 2021/08/04 04:16:28 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char *str);
-
-size_t	ft_strlcat(char *dest, char *src, size_t size)
+int	ft_memcmp(const void *dest, const void *src, size_t n)
 {
-	size_t	i;
-	size_t	j;
-	size_t	destlen;
+	size_t			i;
+	unsigned char	*newsrc;
+	unsigned char	*newdest;
 
+	newsrc = (unsigned char *)src;
+	newdest = (unsigned char *)dest;
 	i = 0;
-	j = 0;
-	destlen = ft_strlen(dest);
-	while (i < size && dest[i])
-		i++;
-	if (i == size)
-		return (i + ft_strlen(src));
-	while (src[j])
+	while (i < n)
 	{
-		if (j < size - destlen - 1)
-		{
-			dest[i] = src[j];
+		if (newdest[i] == newsrc[i])
 			i++;
-		}
-		j++;
+		else
+			return (newdest[i] - newsrc[i]);
 	}
-	dest[i] = '\0';
-	return (destlen + j);
+	return (0);
 }

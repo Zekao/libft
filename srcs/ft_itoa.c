@@ -6,66 +6,59 @@
 /*   By: emaugale <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 20:37:28 by emaugale          #+#    #+#             */
-/*   Updated: 2021/08/02 20:13:00 by emaugale         ###   ########.fr       */
+/*   Updated: 2021/08/03 15:00:18 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrev(char *str)
+int	count_size(int n)
 {
-	int			i;
-	int			j;
-	char		tmp;
+	int	count;
 
-	j = ft_strlen(str);
-	i = 0;
-	while (i < ((j + 1) / 2))
+	count = 0;
+	if (n < 0)
+		n = n * -1;
+	while (n)
 	{
-		tmp = str[i];
-		str[i] = str[j - 1];
-		str[j - 1] = tmp;
-		i++;
-		j--;
+		n = n / 10;
+		count++;
 	}
-	return (str);
+	return (count);
 }
 
-char	*verif_nbr(void)
+long int	under_zero(long int nbr, char *c)
 {
-	char	*str;
-
-	str = malloc(sizeof(char) * 2);
-	str[0] = '0';
-	str[1] = '\0';
-	return (str);
-}
-
-char	*ft_itoa(int nbr)
-{
-	char	*str;
-	int		i;
-	int		verif;
-
-	verif = 0;
-	i = 0;
-	if (nbr == 0)
-		return (verif_nbr());
-	if (nbr == -2147483648)
-		return ("-2147483648");
 	if (nbr < 0)
 	{
-		verif++;
 		nbr = nbr * -1;
+		*c = '-';
 	}
-	str = malloc(sizeof(char) * 12);
-	while (nbr)
+	return (nbr);
+}
+
+char	*ft_itoa(int nb)
+{
+	char		*str;
+	int			i;
+	long int	nbr;
+	int			count;
+
+	nbr = nb;
+	count = count_size(nbr);
+	str = malloc(sizeof(char) * (count));
+	if (!(str))
+		return (0);
+	i = 0;
+	if (count == 0 || nbr < 0)
+		count++;
+	if (nbr < 0)
+		nbr = under_zero(nbr, &str[i++]);
+	while (count > i)
 	{
-		str[i] = (nbr % 10) + 48;
+		count--;
+		str[count] = (nbr % 10) + 48;
 		nbr = nbr / 10;
-		i++;
 	}
-	if (verif == 1)
-		str[i] = '-';
-	return(ft_strrev(str));
+	return (str);
 }

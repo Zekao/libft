@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emaugale <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/25 20:11:51 by emaugale          #+#    #+#             */
-/*   Updated: 2021/08/02 20:59:57 by emaugale         ###   ########.fr       */
+/*   Created: 2021/08/04 03:38:49 by emaugale          #+#    #+#             */
+/*   Updated: 2021/08/04 03:45:07 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char *str)
+void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
+	char	*dest;
 
+	dest = s;
 	i = 0;
-	while (str[i])
+	while (i < n)
+	{
+		dest[i] = '\0';
 		i++;
-	return (i);
+	}
 }
