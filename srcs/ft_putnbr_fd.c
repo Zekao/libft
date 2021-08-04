@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaugale <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 03:51:20 by emaugale          #+#    #+#             */
-/*   Updated: 2021/08/04 19:06:14 by emaugale         ###   ########.fr       */
+/*   Created: 2021/08/04 19:25:25 by emaugale          #+#    #+#             */
+/*   Updated: 2021/08/04 19:38:16 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int		i;
-	char	*str;
-
-	str = (char *)s;
-	i = 0;
-	while (str[i] != c)
+	if (n == -2147483648)
 	{
-		if (str[i] == '\0')
-			return (0);
-		i++;
+		write(fd, "-2147483648", 11);
+		return ;
 	}
-	return (str + i);
+	else if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		n = n * -1;
+	}
+	if (n > 9)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
+	if (n <= 9)
+	{
+		ft_putchar_fd(n + 48, fd);
+	}
 }

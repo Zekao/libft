@@ -6,7 +6,7 @@
 #    By: emaugale <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/26 20:40:06 by emaugale          #+#    #+#              #
-#    Updated: 2021/08/04 14:08:55 by emaugale         ###   ########.fr        #
+#    Updated: 2021/08/04 20:03:52 by emaugale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRCS =	ft_atoi.c	\
 	ft_isdigit.c	\
 	ft_isprint.c	\
 	ft_split.c	\
+	ft_strjoin.c	\
 	ft_strdup.c	\
 	ft_strlcpy.c	\
 	ft_strlcat.c	\
@@ -27,13 +28,18 @@ SRCS =	ft_atoi.c	\
 	ft_itoa.c 	\
 	ft_memcmp.c	\
 	ft_putstr.c	\
+	ft_memcpy.c	\
 	ft_putstr_fd.c	\
 	ft_putchar_fd.c	\
+	ft_putnbr_fd.c	\
 	ft_calloc.c	\
 	ft_putendl_fd.c	\
 	ft_strncmp.c	\
 	ft_bzero.c	\
 	ft_strchr.c	\
+	ft_strrchr.c	\
+	ft_memmove.c	\
+	ft_memset.c	\
 
 D_OBJS =  srcs
 

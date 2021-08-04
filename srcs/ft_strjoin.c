@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaugale <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 03:51:20 by emaugale          #+#    #+#             */
-/*   Updated: 2021/08/04 19:06:14 by emaugale         ###   ########.fr       */
+/*   Created: 2021/08/04 19:38:55 by emaugale          #+#    #+#             */
+/*   Updated: 2021/08/04 19:46:52 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;
-	char	*str;
+	int		j;
+	int		size;
+	char	*newstr;
 
-	str = (char *)s;
+	j = 0;
 	i = 0;
-	while (str[i] != c)
+	size = ft_strlen((char *)(s1) + ft_strlen((char *)s2));
+	newstr = malloc(sizeof(char) * (size + 1));
+	if (!(newstr))
+		return (0);
+	while (s1[i])
 	{
-		if (str[i] == '\0')
-			return (0);
+		newstr[i] = s1[i];
 		i++;
 	}
-	return (str + i);
+	while (s2[j])
+	{
+		newstr[i + j] = s2[j];
+		j++;
+	}
+	newstr[i + j] = '\0';
+	return (newstr);
 }
