@@ -6,7 +6,7 @@
 #    By: emaugale <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/26 20:40:06 by emaugale          #+#    #+#              #
-#    Updated: 2021/08/04 20:03:52 by emaugale         ###   ########.fr        #
+#    Updated: 2021/08/04 22:03:40 by emaugale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,7 @@ SRCS =	ft_atoi.c	\
 	ft_strrchr.c	\
 	ft_memmove.c	\
 	ft_memset.c	\
+	ft_memchr.c	\
 
 D_OBJS =  srcs
 

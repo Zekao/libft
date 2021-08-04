@@ -6,7 +6,7 @@
 /*   By: emaugale <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 21:05:10 by emaugale          #+#    #+#             */
-/*   Updated: 2021/08/04 19:57:14 by emaugale         ###   ########.fr       */
+/*   Updated: 2021/08/04 22:03:29 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void		ft_putnbr_fd(int n, int fd);
 void		ft_putchar_fd(char c, int fd);
 void		*ft_memcpy(void *dest, const void *src, size_t n);
 void		*ft_memmove(void *dest, void *src, size_t n);
+void		*ft_memchr(const void *s, int c, size_t n);
 void		*ft_memset(void *s, int c, size_t n);
 char		*ft_strndup(char *str, int j);
 char		*ft_strjoin(char const *s1, char const *s2);
