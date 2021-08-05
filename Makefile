@@ -6,9 +6,11 @@
 #    By: emaugale <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/26 20:40:06 by emaugale          #+#    #+#              #
-#    Updated: 2021/08/04 22:03:40 by emaugale         ###   ########.fr        #
+#    Updated: 2021/08/05 14:50:12 by emaugale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+NAME = libft.a
 
 SRCS =	ft_atoi.c	\
 	ft_isacii.c	\
@@ -41,12 +43,13 @@ SRCS =	ft_atoi.c	\
 	ft_memmove.c	\
 	ft_memset.c	\
 	ft_memchr.c	\
+	ft_substr.c	\
+	ft_strmapi.c	\
+	ft_striteri.c	\
 
 D_OBJS =  srcs
 
 OBJS := ${patsubst %.c, ${D_OBJS}/%.o, ${SRCS}}
-
-NAME = libft.a
 
 CC = gcc
 
@@ -59,19 +62,18 @@ CFLAGS =  -Wall -Wextra -Werror
 .c.o:
 	${CC} ${CFLAGS} -c -I ${INC_DIR} $< -o ${<:.c=.o}
 
-all: ${NAME}
+all: $(NAME)
 
-	@echo "Lib have been created"
-${NAME}: ${OBJS}
-	ar rc ${NAME} ${OBJS}
+$(NAME): ${OBJS}
+	ar rc $(NAME) ${OBJS}
 
 clean: 
 	${RM} ${OBJS}
 	@echo "Objects have been deleted"
 fclean: clean
-	${RM} ${NAME}
+	${RM} $(NAME)
 	@echo "Lib have been deleted"
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re libft.a

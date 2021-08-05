@@ -6,7 +6,7 @@
 /*   By: emaugale <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 21:05:10 by emaugale          #+#    #+#             */
-/*   Updated: 2021/08/04 22:03:29 by emaugale         ###   ########.fr       */
+/*   Updated: 2021/08/05 14:50:46 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,9 @@ char		*ft_strrchr(const char *s, int c);
 char		*ft_itoa(int nbr);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t n);
 char		*ft_strdup(char *str);
+char		*ft_substr(char const *s, unsigned int start, size_t len);
+char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 size_t		ft_strlcpy(char *dest, char *src, size_t size);
 size_t		ft_strlen(char *str);
 size_t		ft_strlcat(char *dest, char *src, size_t size);
