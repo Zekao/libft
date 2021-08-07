@@ -6,7 +6,7 @@
 /*   By: emaugale <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 18:10:34 by emaugale          #+#    #+#             */
-/*   Updated: 2021/08/07 18:13:47 by emaugale         ###   ########.fr       */
+/*   Updated: 2021/08/07 22:27:22 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 	int	i;
 
 	i = 0;
-	while (alst[i])
+	while (alst)
 	{
-		i++;
+		alst = alst->next;
 	}
-	alst[i] = new;
+	alst = new;
 }
