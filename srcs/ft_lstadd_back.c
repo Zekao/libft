@@ -6,7 +6,7 @@
 /*   By: emaugale <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 18:10:34 by emaugale          #+#    #+#             */
-/*   Updated: 2021/08/07 22:27:22 by emaugale         ###   ########.fr       */
+/*   Updated: 2021/08/07 23:51:49 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	int	i;
+	t_list	*tmp;
 
-	i = 0;
-	while (alst)
+	if (!(*alst))
+		*alst = new;
+	else
 	{
-		alst = alst->next;
+		tmp = ft_lstlast(*(alst));
+		tmp->next = new;
 	}
-	alst = new;
 }

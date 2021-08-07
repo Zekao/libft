@@ -6,16 +6,16 @@
 /*   By: emaugale <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 18:30:31 by emaugale          #+#    #+#             */
-/*   Updated: 2021/08/07 18:38:27 by emaugale         ###   ########.fr       */
+/*   Updated: 2021/08/07 23:43:23 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *newlst;
-	t_list *new;
+	t_list	*newlst;
+	t_list	*new;
 
 	new = ft_lstnew(f(lst->content));
 	if (!(new))
