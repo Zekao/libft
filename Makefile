@@ -6,7 +6,7 @@
 #    By: emaugale <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/26 20:40:06 by emaugale          #+#    #+#              #
-#    Updated: 2021/08/07 17:18:21 by emaugale         ###   ########.fr        #
+#    Updated: 2021/08/07 18:42:00 by emaugale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,15 @@ SRCS =	srcs/ft_atoi.c	\
 	srcs/ft_strmapi.c	\
 	srcs/ft_striteri.c	\
 
-BONUS = srcs/ft_lstnew.c
+BONUS = srcs/ft_lstnew.c	\
+	srcs/ft_lstadd_front.c	\
+	srcs/ft_lstsize.c	\
+	srcs/ft_lstlast.c	\
+	srcs/ft_lstadd_back.c	\
+	srcs/ft_lstdelone.c	\
+	srcs/ft_lstclear.c	\
+	srcs/ft_lstiter.c	\
+	srcs/ft_lstmap.c	\
 
 D_OBJS =  srcs
 
