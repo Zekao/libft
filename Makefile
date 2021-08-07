@@ -6,50 +6,54 @@
 #    By: emaugale <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/26 20:40:06 by emaugale          #+#    #+#              #
-#    Updated: 2021/08/05 14:50:12 by emaugale         ###   ########.fr        #
+#    Updated: 2021/08/07 17:18:21 by emaugale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRCS =	ft_atoi.c	\
-	ft_isacii.c	\
-	ft_isalnum.c	\
-	ft_isalpha.c	\
-	ft_isdigit.c	\
-	ft_isprint.c	\
-	ft_split.c	\
-	ft_strjoin.c	\
-	ft_strdup.c	\
-	ft_strlcpy.c	\
-	ft_strlcat.c	\
-	ft_strlen.c	\
-	ft_strnstr.c	\
-	ft_tolower.c	\
-	ft_toupper.c	\
-	ft_itoa.c 	\
-	ft_memcmp.c	\
-	ft_putstr.c	\
-	ft_memcpy.c	\
-	ft_putstr_fd.c	\
-	ft_putchar_fd.c	\
-	ft_putnbr_fd.c	\
-	ft_calloc.c	\
-	ft_putendl_fd.c	\
-	ft_strncmp.c	\
-	ft_bzero.c	\
-	ft_strchr.c	\
-	ft_strrchr.c	\
-	ft_memmove.c	\
-	ft_memset.c	\
-	ft_memchr.c	\
-	ft_substr.c	\
-	ft_strmapi.c	\
-	ft_striteri.c	\
+SRCS =	srcs/ft_atoi.c	\
+	srcs/ft_isacii.c	\
+	srcs/ft_isalnum.c	\
+	srcs/ft_isalpha.c	\
+	srcs/ft_isdigit.c	\
+	srcs/ft_isprint.c	\
+	srcs/ft_split.c	\
+	srcs/ft_strjoin.c	\
+	srcs/ft_strdup.c	\
+	srcs/ft_strlcpy.c	\
+	srcs/ft_strlcat.c	\
+	srcs/ft_strlen.c	\
+	srcs/ft_strnstr.c	\
+	srcs/ft_tolower.c	\
+	srcs/ft_toupper.c	\
+	srcs/ft_itoa.c 	\
+	srcs/ft_memcmp.c	\
+	srcs/ft_putstr.c	\
+	srcs/ft_memcpy.c	\
+	srcs/ft_putstr_fd.c	\
+	srcs/ft_putchar_fd.c	\
+	srcs/ft_putnbr_fd.c	\
+	srcs/ft_calloc.c	\
+	srcs/ft_putendl_fd.c	\
+	srcs/ft_strncmp.c	\
+	srcs/ft_bzero.c	\
+	srcs/ft_strchr.c	\
+	srcs/ft_strrchr.c	\
+	srcs/ft_memmove.c	\
+	srcs/ft_memset.c	\
+	srcs/ft_memchr.c	\
+	srcs/ft_substr.c	\
+	srcs/ft_strmapi.c	\
+	srcs/ft_striteri.c	\
+
+BONUS = srcs/ft_lstnew.c
 
 D_OBJS =  srcs
 
-OBJS := ${patsubst %.c, ${D_OBJS}/%.o, ${SRCS}}
+OBJS := ${SRCS:.c=.o}
+
+BONUSOBJS := ${BONUS:.c=.o}
 
 CC = gcc
 
@@ -66,6 +70,9 @@ all: $(NAME)
 
 $(NAME): ${OBJS}
 	ar rc $(NAME) ${OBJS}
+
+bonus: ${OBJS} ${BONUSOBJS}
+	ar rc $(NAME) ${OBJS} ${BONUSOBJS}
 
 clean: 
 	${RM} ${OBJS}

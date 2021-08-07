@@ -1,5 +1,7 @@
 *.o 
 libft.a
 libfttester/
+libfttester2/
+libfttester3/
 includes/libft.h.gch
 .DS_Store

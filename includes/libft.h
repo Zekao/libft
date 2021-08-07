@@ -6,7 +6,7 @@
 /*   By: emaugale <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 21:05:10 by emaugale          #+#    #+#             */
-/*   Updated: 2021/08/05 14:50:46 by emaugale         ###   ########.fr       */
+/*   Updated: 2021/08/07 17:08:50 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 # include <stdlib.h>
 # include <stddef.h>
 # include <unistd.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+t_list		*ft_lstnew(void *content);
 
 void		ft_putstr(char *str);
 void		ft_bzero(void *s, size_t n);
@@ -52,4 +59,5 @@ int			ft_tolower(int c);
 int			ft_isalnum(int c);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 int			ft_isprint(int c);
+
 #endif
