@@ -46,6 +46,7 @@ SRCS =	srcs/ft_atoi.c		\
 	srcs/ft_substr.c	\
 	srcs/ft_strmapi.c	\
 	srcs/ft_striteri.c	\
+	srcs/ft_strtrim.c	\
 
 BONUS = srcs/ft_lstnew.c	\
 	srcs/ft_lstadd_front.c	\
