@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaugale <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/26 00:03:14 by emaugale          #+#    #+#             */
-/*   Updated: 2021/07/26 00:04:28 by emaugale         ###   ########.fr       */
+/*   Created: 2021/07/25 23:39:23 by emaugale          #+#    #+#             */
+/*   Updated: 2021/07/26 21:09:52 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+#include "libft.h"
+
+int	ft_isalnum(int c)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
+	if (ft_isalpha(c) || ft_isdigit(c))
+		return (8);
 	return (0);
 }
