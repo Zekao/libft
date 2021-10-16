@@ -134,6 +134,10 @@ fclean: clean
 	@${RM} $(NAME) 
 	@echo " ${NAME} have been deleted"
 
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
+
 re: fclean all
 
 .PHONY: all clean fclean re libft.a bonus

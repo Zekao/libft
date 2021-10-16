@@ -48,6 +48,8 @@ char	*ft_strndup(char *str, int j)
 
 	i = 0;
 	finalstr = malloc(sizeof(char) * (j + 1));
+	if (!finalstr)
+		return (NULL);
 	while (str[i] && i < j)
 	{
 		finalstr[i] = str[i];
@@ -74,6 +76,8 @@ char	**ft_split(char *str, char sep)
 	j = 0;
 	size = ft_count_words(str, sep);
 	finalstr = malloc(sizeof(char *) * (size + 1));
+	if (!finalstr)
+		return (NULL);
 	if (ft_count_words(str, sep) == 0)
 		return (merci_la_norme(finalstr));
 	while (j < size)

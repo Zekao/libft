@@ -14,17 +14,11 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	*tab;
-	int		i;
-
-	if (nmemb == 0 || size == 0)
+	char	*str;
+	
+	str = malloc(sizeof(size) * (nmemb));
+	if (!str)
 		return (NULL);
-	i = 0;
-	tab = malloc(sizeof(size) * (nmemb + 1));
-	while (tab[i])
-	{
-		tab[i] = 0;
-		i++;
-	}
-	return (tab);
+	ft_memset(str, 0, nmemb);
+	return (str);
 }

@@ -21,10 +21,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	j = 0;
 	i = 0;
+	if (!s1 || !s2)
+		return (NULL);
 	size = ft_strlen((char *)(s1) + ft_strlen((char *)s2));
 	newstr = malloc(sizeof(char) * (size + 1));
-	if (!(newstr))
-		return (0);
+	if (!newstr)
+		return (NULL);
 	while (s1[i])
 	{
 		newstr[i] = s1[i];
