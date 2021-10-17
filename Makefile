@@ -135,8 +135,8 @@ fclean: clean
 	@echo " ${NAME} have been deleted"
 
 so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BONUS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS) $(BONUSOBJS)
 
 re: fclean all
 

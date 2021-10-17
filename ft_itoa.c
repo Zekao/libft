@@ -12,53 +12,51 @@
 
 #include "libft.h"
 
-int	count_size(int n)
+int	ft_count_size(int nbr)
 {
-	int	count;
+	int	size;
 
-	count = 0;
-	if (n < 0)
-		n = n * -1;
-	while (n)
-	{
-		n = n / 10;
-		count++;
-	}
-	return (count);
-}
-
-long int	under_zero(long int nbr, char *c)
-{
+	size = 1;
+	if (nbr == 0)
+		return (2);
 	if (nbr < 0)
 	{
 		nbr = nbr * -1;
-		*c = '-';
+		size++;
 	}
-	return (nbr);
+	while (nbr)
+	{
+		nbr = nbr / 10;
+		size++;
+	}
+	return (size);
 }
 
-char	*ft_itoa(int nb)
+char	*ft_itoa(int nbr)
 {
+	long int	nb;
+	int			size;
 	char		*str;
-	int			i;
-	long int	nbr;
-	int			count;
 
-	nbr = nb;
-	count = count_size(nbr);
-	str = malloc(sizeof(char) * (count));
-	if (!(str))
-		return (0);
-	i = 0;
-	if (count == 0 || nbr < 0)
-		count++;
-	if (nbr < 0)
-		nbr = under_zero(nbr, &str[i++]);
-	while (count > i)
+	nb = nbr;
+	size = ft_count_size(nb);
+	str = malloc(sizeof(char) * size);
+	if (!str)
+		return (NULL);
+	if (nb < 0)
 	{
-		count--;
-		str[count] = (nbr % 10) + 48;
-		nbr = nbr / 10;
+		str[0] = '-';
+		nb = nb * -1;
+	}
+	if (nb == 0)
+		str[0] = '0';
+	size--;
+	str[size] = '\0';
+	while (nb)
+	{
+		str[size - 1] = nb % 10 + '0';
+		nb = nb / 10;
+		size--;
 	}
 	return (str);
 }
