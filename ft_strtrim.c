@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 int	ft_check_set(char const *set, char c)
 {
@@ -20,36 +21,33 @@ int	ft_check_set(char const *set, char c)
 	while (set[i])
 	{
 		if (set[i] == c)
-			return (0);
+			return (1);
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int			i;
-	int			j;
-	int			count;
-	char		*str;
+	char	*finalstr;
+	int		start;
+	int		end;
+	int		i;
 
-	j = 0;
-	while (s1[i])
-	{
-		if (ft_check_set(set, s1[i]))
-			count++;
-		i++;
-	}
-	str = malloc(sizeof(char) * (count + 1));
-	if (!str)
-		return (0);
 	i = 0;
-	while (s1[i])
-	{
-		if (ft_check_set(set, s1[i]))
-			str[j++] = s1[i];
-		i++;
-	}
-	str[j] = '\0';
-	return (str);
+	start = 0;
+	if (!set || !s1)
+		return (NULL);
+	end = ft_strlen((char *)s1);
+	while (ft_check_set(set, s1[start]) == 1)
+		start++;
+	while (end > start && ft_check_set(set, s1[end - 1]) == 1)
+		end--;
+	finalstr = malloc(sizeof(char) * (end - start + 1));
+	if (!finalstr)
+		return (NULL);
+	while (start < end)
+		finalstr[i++] = s1[start++];
+	finalstr[i] = '\0';
+	return (finalstr);
 }

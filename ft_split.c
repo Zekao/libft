@@ -59,27 +59,13 @@ char	*ft_strndup(char *str, int j)
 	return (finalstr);
 }
 
-char	**merci_la_norme(char **finalstr)
+char	**ft_split2(char **finalstr, char *str, char sep, int size)
 {
-	finalstr[0] = 0;
-	return (finalstr);
-}
-
-char	**ft_split(char *str, char sep)
-{
-	int		i;
-	int		j;
-	int		size;
-	char	**finalstr;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
-	size = ft_count_words(str, sep);
-	finalstr = malloc(sizeof(char *) * (size + 1));
-	if (!finalstr)
-		return (NULL);
-	if (ft_count_words(str, sep) == 0)
-		return (merci_la_norme(finalstr));
 	while (j < size)
 	{
 		while (ft_is_charset(str[i], sep) == 1 && str[i])
@@ -93,5 +79,23 @@ char	**ft_split(char *str, char sep)
 		i = 0;
 	}
 	finalstr[j] = 0;
+	return (finalstr);
+}
+
+char	**ft_split(char *str, char sep)
+{
+	char	**finalstr;
+	int		size;
+
+	size = ft_count_words(str, sep);
+	finalstr = malloc(sizeof(char *) * (ft_count_words(str, sep) + 1));
+	if (!finalstr)
+		return (NULL);
+	if (ft_count_words(str, sep) == 0)
+	{
+		finalstr[0] = 0;
+		return (finalstr);
+	}
+	finalstr = ft_split2(finalstr, str, sep, size);
 	return (finalstr);
 }
