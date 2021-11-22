@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: emaugale <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/26 20:40:06 by emaugale          #+#    #+#              #
-#    Updated: 2021/08/07 18:42:00 by emaugale         ###   ########.fr        #
+#    Updated: 2021/11/22 17:12:46 by emaugale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -133,10 +133,6 @@ clean:
 fclean: clean
 	@${RM} $(NAME) 
 	@echo " ${NAME} have been deleted"
-
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BONUS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS) $(BONUSOBJS)
 
 re: fclean all
 

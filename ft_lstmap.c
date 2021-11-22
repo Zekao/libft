@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaugale <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 18:30:31 by emaugale          #+#    #+#             */
-/*   Updated: 2021/08/07 23:43:23 by emaugale         ###   ########.fr       */
+/*   Updated: 2021/11/22 17:12:03 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,23 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new;
 
 	new = ft_lstnew(f(lst->content));
-	if (!(new))
+	if (!new)
 		return (NULL);
 	newlst = new;
 	lst = lst->next;
-	while (lst)
+	if (lst)
 	{
-		new = ft_lstnew(f(lst->content));
-		if (!(new))
+		while (lst)
 		{
-			ft_lstclear(&newlst, del);
-			return (NULL);
+			new = ft_lstnew(f(lst->content));
+			if (!(new))
+			{
+				ft_lstclear(&newlst, del);
+				return (NULL);
+			}
+			ft_lstadd_back(&newlst, new);
+			lst = lst->next;
 		}
-		ft_lstadd_back(&newlst, new);
-		lst = lst->next;
 	}
 	return (newlst);
 }
