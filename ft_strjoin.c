@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 19:38:55 by emaugale          #+#    #+#             */
-/*   Updated: 2021/11/22 17:12:36 by emaugale         ###   ########.fr       */
+/*   Updated: 2021/11/24 23:54:52 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	if (!s1 || !s2)
 		return (NULL);
-	size = ft_strlen((char *)(s1) + ft_strlen((char *)s2));
+	size = ft_strlen(s1) + ft_strlen(s2);
 	newstr = malloc(sizeof(char) * (size + 1));
 	if (!newstr)
 		return (NULL);

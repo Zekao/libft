@@ -6,13 +6,13 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 00:07:34 by emaugale          #+#    #+#             */
-/*   Updated: 2021/11/22 17:12:34 by emaugale         ###   ########.fr       */
+/*   Updated: 2021/11/23 13:21:47 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_is_charset(char c, char sep)
+static int	ft_is_charset(char c, char sep)
 {
 	if (c == sep)
 		return (1);
@@ -20,7 +20,7 @@ int	ft_is_charset(char c, char sep)
 		return (0);
 }
 
-int	ft_count_words(char *str, char sep)
+static int	ft_count_words(char *str, char sep)
 {
 	int	i;
 	int	count;
@@ -41,7 +41,7 @@ int	ft_count_words(char *str, char sep)
 	return (count);
 }
 
-char	*ft_strndup(char *str, int j)
+static char	*ft_strndup(char *str, int j)
 {
 	int		i;
 	char	*finalstr;
@@ -59,7 +59,7 @@ char	*ft_strndup(char *str, int j)
 	return (finalstr);
 }
 
-char	**ft_split2(char **finalstr, char *str, char sep, int size)
+static char	**ft_split2(char **finalstr, char *str, char sep, int size)
 {
 	int	i;
 	int	j;

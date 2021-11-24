@@ -6,14 +6,13 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 23:21:02 by emaugale          #+#    #+#             */
-/*   Updated: 2021/11/22 17:12:41 by emaugale         ###   ########.fr       */
+/*   Updated: 2021/11/23 13:24:16 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	ft_check_set(char const *set, char c)
+static int	ft_check_set(char const *set, char c)
 {
 	int	i;
 

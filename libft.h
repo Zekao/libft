@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 21:05:10 by emaugale          #+#    #+#             */
-/*   Updated: 2021/11/22 17:12:44 by emaugale         ###   ########.fr       */
+/*   Updated: 2021/11/24 23:53:55 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ int			ft_toupper(int c);
 int			ft_tolower(int c);	
 int			ft_isalnum(int c);
 int			ft_isprint(int c);
-char		*ft_strndup(char *str, int j);
 int			ft_atoi(const char *str);
 int			ft_memcmp(const void *s1, const void *s2, size_t n);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
@@ -60,7 +59,7 @@ char		*ft_strrchr(const char *s, int c);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t n);
 char		*ft_strdup(char *str);
 size_t		ft_strlcpy(char *dest, char *src, size_t size);
-size_t		ft_strlen(char *str);
+size_t		ft_strlen(const char *str);
 size_t		ft_strlcat(char *dest, char *src, size_t size);
 void		ft_putstr(char *str);
 void		ft_bzero(void *s, size_t n);

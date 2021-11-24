@@ -6,13 +6,13 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/25 20:11:51 by emaugale          #+#    #+#             */
-/*   Updated: 2021/11/22 17:12:38 by emaugale         ###   ########.fr       */
+/*   Updated: 2021/11/24 23:54:18 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 

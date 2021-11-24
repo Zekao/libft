@@ -6,14 +6,14 @@
 #    By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/26 20:40:06 by emaugale          #+#    #+#              #
-#    Updated: 2021/11/22 17:12:46 by emaugale         ###   ########.fr        #
+#    Updated: 2021/11/24 23:52:28 by emaugale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 SRCS =	ft_atoi.c		\
-	ft_isacii.c	\
+	ft_isascii.c	\
 	ft_isalnum.c	\
 	ft_isalpha.c	\
 	ft_isdigit.c	\
@@ -72,56 +72,18 @@ INC_DIR = includes
 CFLAGS =  -Wall -Wextra -Werror
 
 .c.o:
-	@${CC} ${CFLAGS} -c -I ${INC_DIR} $< -o ${<:.c=.o}
+	${CC} ${CFLAGS} -c -I ${INC_DIR} $< -o ${<:.c=.o}
 
 all: $(NAME)
-	@clear
-	@echo "\033[0;31m\n                   "
-	@echo "                  ⣠⣤⣤⣤⣤⣤⣶⣦⣤⣄⡀⠀"
-	@echo "              ⢀⣴⣿⡿⠛⠉⠙⠛⠛⠛⠛⠻⢿⣿⣷⣤⡀   "
-	@echo "              ⣼⣿⠋⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⠈⢻⣿⣿⡄⠀⠀⠀"
-	@echo "             ⣸⣿⡏⠀⠀⠀⣠⣶⣾⣿⣿⣿⠿⠿⠿⢿⣿⣿⣿⣄⠀"
-	@echo "             ⣿⣿⠁⠀⠀⢰⣿⣿⣯⠁⠀⠀⠀⠀⠀⠀⠀⠈⠙⢿⣷⡄⠀"
-	@echo "       ⣀⣤⣴⣶⣶⣿⡟⠀⠀⠀⢸⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣷⠀"
-	@echo "⠀     ⣿⡟⠋⠉⣹⣿⡇⠀⠀⠀⠘⣿⣿⣿⣿⣷⣦⣤⣤⣤⣶⣶⣶⣶⣿⣿⣿⠀ \033[0;32m When the makefile is sus \033[0;31m"
-	@echo "⠀    ⢸⣿⡇⠀⠀⣿⣿⡇⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠃"⠀
-	@echo "     ⣸⣿⡇⠀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠉⠻⠿⣿⣿⣿⣿⡿⠿⠿⠛⢻⣿⡇⠀⠀"
-	@echo "     ⣿⣿⠁⠀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣧⠀"
-	@echo "     ⣿⣿⠀⠀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⠀" 
-	@echo "     ⣿⣿⠀⠀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⠀      \033[1;33m emaugale's libft without bonus (make bonus)\033[0;31m"
-	@echo "     ⢿⣿⡆⠀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⡇"
-	@echo "     ⠸⣿⣧⡀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠃"
-	@echo "      ⠛⢿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⣰⣿⣿⣷⣶⣶⣶⣶⠶⠀⢠⣿⣿"
-	@echo "           ⣿⣿⠀⠀⠀⠀⠀⣿⣿⡇⠀⣽⣿⡏⠁⠀⠀⢸⣿⡇⠀"
-	@echo "           ⣿⣿⠀⠀⠀⠀⠀⣿⣿⡇⠀⢹⣿⡆⠀⠀⠀⣸⣿⠇"
-	@echo "           ⢿⣿⣦⣄⣀⣠⣴⣿⣿⠁⠀⠈⠻⣿⣿⣿⣿⡿⠏"
-	@echo "           ⠈⠛⠻⠿⠿⠿⠿⠋⠁"
-	@echo "\033[0;34m                     \033[1;36m 100/100 or consequences\033[0;32m"
-	@sleep 1
-	@echo "\033[1;34m Bonne correction !\n"
-	@sleep 2
 
 $(NAME): ${OBJS}
-	@ar rc $(NAME) ${OBJS}
+	ar rc $(NAME) ${OBJS}
 
 bonus: ${OBJS} ${BONUSOBJS}
-	@ar rc $(NAME) ${OBJS} ${BONUSOBJS}
-	@echo "⠀\033[1;32m⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡜⢣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-	@echo "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠎⡴⢦⠱⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-	@echo "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⢎⣜⣉⣉⣧⡱⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-	@echo "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⢃⡞⠒⣒⣒⠒⢳⡘⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-	@echo "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⢡⣎⡩⠭⠤⠤⠭⢍⣱⡜⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-	@echo "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡴⢡⡯⠴⢒⣈⣩⣉⣑⡒⠠⣹⡌⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-	@echo "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡔⣡⣣⠔⡺⡋⡁⢀⡀⢈⠙⢟⠢⣝⣄⢢⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀When the makefile is an illuminati"
-	@echo "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡜⣰⡟⠁⢰⡓⢎⣀⣸⣿⣷⡱⢚⡆⠈⢻⣆⢣⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-	@echo "⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠎⡼⣇⠣⡀⠸⡄⢊⢿⣿⣿⡿⡑⢠⠇⢀⠜⣸⢧⠱⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-	@echo "⠀⠀⠀⠀⠀⠀⠀⠀⢠⢋⢼⡙⢌⠳⣍⠲⢽⣄⣁⠂⠐⣈⣠⡯⠔⣡⠞⡡⢊⣧⡙⡄⠀⠀⠀⠀⠀⠀⠀⠀\033[1;34memaugale's libft with bonus \033[1;32m "
-	@echo "⠀⠀⠀⠀⠀⠀⠀⣠⢃⣞⠣⡙⠦⡑⠦⣍⡒⠤⠬⠭⠭⠥⠤⢒⣩⠴⢊⠴⢋⠜⣳⡘⣄⠀⠀⠀⠀⠀⠀⠀"
-	@echo "⠀⠀⠀⠀⠀⠀⣰⣃⣛⣚⣓⣚⣓⣚⣓⣒⣛⣛⣓⣒⣒⣚⣛⣛⣒⣚⣓⣚⣓⣚⣒⣛⣘⣆		"
-	@echo "         125/100 or consequences"
+	ar rc $(NAME) ${OBJS} ${BONUSOBJS}
 
 clean: 
-	@${RM} ${OBJS} ${BONUSOBJS}
+	${RM} ${OBJS} ${BONUSOBJS}
 	@echo "\033[1;31m ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣶⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
 	@echo "⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣦⣄⣀⡀⣠⣾⡇⠀⠀⠀⠀"
 	@echo "⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀"
@@ -136,4 +98,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re libft.a bonus
+.PHONY: all clean fclean re 

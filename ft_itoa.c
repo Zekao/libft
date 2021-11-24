@@ -6,13 +6,13 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 20:37:28 by emaugale          #+#    #+#             */
-/*   Updated: 2021/11/22 17:11:58 by emaugale         ###   ########.fr       */
+/*   Updated: 2021/11/23 13:17:42 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_count_size(int nbr)
+static int	ft_count_size(int nbr)
 {
 	int	size;
 

@@ -6,13 +6,21 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 14:04:30 by emaugale          #+#    #+#             */
-/*   Updated: 2021/11/22 17:12:37 by emaugale         ###   ########.fr       */
+/*   Updated: 2021/11/24 23:59:34 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char *str);
+static	int	ft_strnlen(char *dest, int size)
+{
+	int	i;
+
+	i = 0;
+	while (dest[i] && i < size)
+		i++;
+	return (i);
+}
 
 size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
@@ -22,7 +30,7 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 
 	i = 0;
 	j = 0;
-	destlen = ft_strlen(dest);
+	destlen = ft_strnlen(dest, size);
 	while (i < size && dest[i])
 		i++;
 	if (i == size)

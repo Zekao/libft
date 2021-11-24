@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 18:18:42 by emaugale          #+#    #+#             */
-/*   Updated: 2021/11/22 17:12:29 by emaugale         ###   ########.fr       */
+/*   Updated: 2021/11/23 13:21:50 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	if (fd)
+	if (fd >= 0)
 	{
 		write(fd, &c, 1);
 	}
