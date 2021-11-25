@@ -6,19 +6,23 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 14:04:30 by emaugale          #+#    #+#             */
-/*   Updated: 2021/11/24 23:59:34 by emaugale         ###   ########.fr       */
+/*   Updated: 2021/11/25 05:06:29 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int	ft_strnlen(char *dest, int size)
+static size_t	ft_strnlen(char *dest, size_t size)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (dest[i] && i < size)
+	while (i < size)
+	{
+		if (dest[i] == '\0')
+			break ;
 		i++;
+	}
 	return (i);
 }
 

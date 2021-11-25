@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 03:51:20 by emaugale          #+#    #+#             */
-/*   Updated: 2021/11/22 17:12:35 by emaugale         ###   ########.fr       */
+/*   Updated: 2021/11/25 04:01:07 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strchr(const char *s, int c)
 
 	str = (char *)s;
 	i = 0;
-	while (str[i] != c)
+	while (str[i] != (char)c)
 	{
 		if (str[i] == '\0')
 			return (0);

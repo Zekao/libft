@@ -6,28 +6,30 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 22:54:23 by emaugale          #+#    #+#             */
-/*   Updated: 2021/11/22 17:12:42 by emaugale         ###   ########.fr       */
+/*   Updated: 2021/11/25 04:54:06 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	ft_diff(size_t size1, size_t size2)
+{
+	if (size1 < size2)
+		return (size1);
+	else
+		return (size2);
+}
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
 	char	*newstr;
 
-	if (!s)
+	if (start >= ft_strlen(s))
+		return (ft_calloc(1, 1));
+	s = s + start;
+	len = ft_diff(len, ft_strlen(s));
+	newstr = ft_calloc(1, len + 1);
+	if (!newstr)
 		return (0);
-	newstr = malloc(sizeof(char) * (len + 1));
-	if (!(newstr))
-		return (0);
-	i = 0;
-	while (i < len && start < ft_strlen((char *)s))
-	{
-		newstr[i] = s[start + i];
-		i++;
-	}
-	newstr[i] = '\0';
-	return (newstr);
+	return ((char *)ft_memcpy(newstr, s, len));
 }
