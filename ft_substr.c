@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 22:54:23 by emaugale          #+#    #+#             */
-/*   Updated: 2021/11/25 04:54:06 by emaugale         ###   ########.fr       */
+/*   Updated: 2021/11/25 05:16:29 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*newstr;
 
+	if (!s)
+		return (0);
 	if (start >= ft_strlen(s))
 		return (ft_calloc(1, 1));
 	s = s + start;
