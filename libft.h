@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 21:05:10 by emaugale          #+#    #+#             */
-/*   Updated: 2021/11/24 23:53:55 by emaugale         ###   ########.fr       */
+/*   Updated: 2021/11/26 01:37:44 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ char		*ft_strchr(const char *s, int c);
 char		*ft_strrchr(const char *s, int c);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t n);
 char		*ft_strdup(char *str);
-size_t		ft_strlcpy(char *dest, char *src, size_t size);
+size_t		ft_strlcpy(char *dest, const char *src, size_t size);
 size_t		ft_strlen(const char *str);
-size_t		ft_strlcat(char *dest, char *src, size_t size);
+size_t		ft_strlcat(char *dest, const char *src, size_t size);
 void		ft_putstr(char *str);
 void		ft_bzero(void *s, size_t n);
 void		*ft_calloc(size_t nmemb, size_t size);
@@ -77,7 +77,7 @@ void		*ft_memset(void *s, int c, size_t n);
 
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_itoa(int nbr);
-char		**ft_split(char *str, char sep);
+char		**ft_split(char const *str, char sep);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void		ft_striteri(char *s, void (*f)(unsigned int, char*));

@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 00:07:34 by emaugale          #+#    #+#             */
-/*   Updated: 2021/11/23 13:21:47 by emaugale         ###   ########.fr       */
+/*   Updated: 2021/11/26 01:36:47 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,11 +82,13 @@ static char	**ft_split2(char **finalstr, char *str, char sep, int size)
 	return (finalstr);
 }
 
-char	**ft_split(char *str, char sep)
+char	**ft_split(char const *s, char sep)
 {
 	char	**finalstr;
 	int		size;
+	char	*str;
 
+	str = (char *)s;
 	size = ft_count_words(str, sep);
 	finalstr = malloc(sizeof(char *) * (ft_count_words(str, sep) + 1));
 	if (!finalstr)

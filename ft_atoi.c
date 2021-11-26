@@ -6,7 +6,7 @@
 /*   By: emaugale <emaugale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/25 20:11:40 by emaugale          #+#    #+#             */
-/*   Updated: 2021/11/22 20:18:03 by emaugale         ###   ########.fr       */
+/*   Updated: 2021/11/26 01:50:41 by emaugale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,18 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (r * verif > 2147483647)
-			return (-1);
-		else if (r * verif < -2147483648)
-			return (0);
+//		if (r * verif > 2147483647)
+//			return (-1);
+//		else if (r * verif < -2147483648)
+//			return (0);
 		r = r * 10 + str[i] - 48;
 		i++;
 	}
 	return (r * verif);
+}
+
+int	main(int argc, char **argv)
+{
+	printf("%d\n", atoi(argv[1]));
+	printf("%d\n", ft_atoi(argv[1]));
 }
